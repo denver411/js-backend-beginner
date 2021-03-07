@@ -1,0 +1,28 @@
+{
+  "name": "js-backend-beginner",
+  "version": "0.0.1",
+  "description": "Experimental backend service",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "flow": "flow",
+    "flow:check": "flow check ./src/",
+    "flow:deps": "flow-typed install",
+    "flow:build": "flow-remove-types ./src/ -d ./lib/ --all --pretty",
+    "start": "node index.js",
+    "dev:flow": "npm run flow:check && npm run flow:build && node ./lib/index.js",
+    "dev": "npm run flow:build && node ./lib/index.js"
+  },
+  "author": "Den Zhe",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.146.0",
+    "flow-remove-types": "^2.146.0",
+    "flow-typed": "^3.3.1"
+  }
+}
